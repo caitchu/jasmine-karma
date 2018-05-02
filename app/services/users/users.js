@@ -5,7 +5,11 @@
 	angular.module('api.users', [])
 	.factory('Users', function(){
 		var Users = {};
-		// Users.method = function(){};
+
+		// Defining all to make our test pass
+		Users.all = function(){
+
+		}
 		return Users;
 	})
 })();
