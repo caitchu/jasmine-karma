@@ -40,6 +40,15 @@ describe('Users factory', function(){
 			twitter: 'dabill'
 		}
 	]
+	// Single user expected when calling findById('2')
+	var singleUser = {
+		id: '2',
+		name: 'Bob', 
+		role: 'Developer',
+		location: 'New York',
+		twitter: 'billybob'
+	}
+
 	// Before each test, load our api.users module 
 	beforeEach(angular.mock.module('api.users'));
 
@@ -66,9 +75,18 @@ describe('Users factory', function(){
 		})
 	})
 
-	describe('.findById()', function(){
+	describe('.findById(id)', function(){
+		// Simple test to verify the method findbyId exists 
 		it('should exist', function(){
 			expect(Users.findById).toBeDefined();
+		})
+		// Verify that findById() returns a single user
+		it ('should return one user object if it exists', function(){
+			expect(Users.findById('2')).toEqual(singleUser);
+		})
+		//Verify calling findById with non-existent id returns undefined
+		it ('should return undefined if the user cannot be found', function(){
+			expect(Users.findById('ABC')).not.toBeDefined();
 		})
 	})
 })
