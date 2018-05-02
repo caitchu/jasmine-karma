@@ -8,7 +8,7 @@
 
 		// Defining all to make our test pass
 		Users.all = function(){
-
+			return userList;
 		}
 		return Users;
 	})
