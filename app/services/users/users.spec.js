@@ -4,7 +4,7 @@
 describe('Users factory', function(){
 	// Adding specs here
 	it('has a dummy spec to test 2 + 2', function(){
-		expect().toEqual(4); // expect is an 'actual', chained to a 'Matcher' function toEqual()
+		expect(2 + 2).toEqual(4); // expect is an 'actual', chained to a 'Matcher' function toEqual()
 							 // expected output of the code being tested 
 	})
 });
